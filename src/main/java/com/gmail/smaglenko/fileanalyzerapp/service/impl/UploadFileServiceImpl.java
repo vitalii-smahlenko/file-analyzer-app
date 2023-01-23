@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
-public class UploadTxtFileService implements UploadFileService {
+public class UploadFileServiceImpl implements UploadFileService {
     @Value("${path.to.files.storage}")
     private String pathToFilesStorage;
 
     @Override
-    public String fileUpload(MultipartFile file) {
+    public String uploadFile(MultipartFile file) {
         String destinationFileName = pathToFilesStorage + file.getOriginalFilename();
         try {
             Files.copy(file.getInputStream(),

@@ -18,7 +18,7 @@ public class FileController {
             response = String.class)
     @GetMapping("/save-companies")
     public String saveCatalog(@RequestParam String fileName) {
-        fileService.cachingDataFromCatalog(fileName);
+        fileService.cacheDataFromCatalog(fileName);
         return "Companies is successfully saved.";
     }
 }

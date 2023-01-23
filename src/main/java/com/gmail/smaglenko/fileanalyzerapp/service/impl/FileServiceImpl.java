@@ -15,7 +15,7 @@ public class FileServiceImpl implements FileService {
     private String pathToFilesStorage;
 
     @Override
-    public List<Company> cachingDataFromCatalog(String fileName) {
+    public List<Company> cacheDataFromCatalog(String fileName) {
         try {
             String contents = Files.readString(Path.of(pathToFilesStorage + fileName));
             String[] split = contents.split("\r\n");

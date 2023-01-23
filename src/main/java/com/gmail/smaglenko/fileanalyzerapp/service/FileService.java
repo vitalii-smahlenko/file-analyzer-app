@@ -4,5 +4,5 @@ import com.gmail.smaglenko.fileanalyzerapp.model.Company;
 import java.util.List;
 
 public interface FileService {
-    List<Company> cachingDataFromCatalog(String fileName);
+    List<Company> cacheDataFromCatalog(String fileName);
 }
