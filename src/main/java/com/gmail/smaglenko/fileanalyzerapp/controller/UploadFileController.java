@@ -18,6 +18,6 @@ public class UploadFileController {
             response = String.class)
     @PostMapping("/upload")
     public String uploadFile(MultipartFile file) {
-        return uploadFileService.fileUpload(file);
+        return uploadFileService.uploadFile(file);
     }
 }
