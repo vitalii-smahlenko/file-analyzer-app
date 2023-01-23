@@ -15,10 +15,12 @@ public class FileServiceImpl implements FileService {
     private String pathToFilesStorage;
 
     @Override
-    public List<Company> saveAllCompanies(String fileName) {
+    public List<Company> cachingDataFromCatalog(String fileName) {
         try {
             String contents = Files.readString(Path.of(pathToFilesStorage + fileName));
             String[] split = contents.split("\r\n");
+            // According to the task, a quick search is required.
+            // In my opinion, LinkedList is better suited for working with stored data.
             List<Company> companies = new LinkedList<>();
             for (int i = 0; i < split.length; i++) {
                 String replace = split[i].replace("\"", "");
@@ -29,7 +31,7 @@ public class FileServiceImpl implements FileService {
             }
             return companies;
         } catch (Exception e) {
-            throw new RuntimeException("Can't save to DB file: " + fileName, e);
+            throw new RuntimeException("Can't read file: " + fileName, e);
         }
     }
 }
