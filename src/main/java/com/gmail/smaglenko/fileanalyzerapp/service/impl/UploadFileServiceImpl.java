@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+//123
 @Service
 public class UploadFileServiceImpl implements UploadFileService {
     @Value("${path.to.files.storage}")
